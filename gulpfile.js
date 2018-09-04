@@ -32,7 +32,7 @@ gulp.task("sass", function () {
       browsers: ["last 4 versions"],
       cascade: false
     }))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("css/"))
     .pipe(browserSync.stream());
 });
 
