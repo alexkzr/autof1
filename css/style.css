@@ -69,6 +69,69 @@
     border: 0px solid transparent;
     outline: none; }
 
+.features {
+  min-height: 840px;
+  background: url("../img-min/scnd-bg.png") no-repeat center;
+  background-size: cover; }
+  .features .section-heading {
+    opacity: 0.97;
+    color: #ffffff;
+    font-family: "Concepto", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 21.9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 100px; }
+    @media (max-width: 48em) {
+      .features .section-heading {
+        line-height: 45.9px; } }
+  .features-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px; }
+    @media (max-width: 62em) {
+      .features-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 250px; } }
+    .features-container .feature {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+      margin-bottom: 35px;
+      min-height: 56px; }
+      @media (max-width: 62em) {
+        .features-container .feature {
+          margin-bottom: 40px;
+          -ms-flex-preferred-size: 90%;
+          flex-basis: 90%; } }
+      @media (max-width: 48em) {
+        .features-container .feature {
+          margin-bottom: 20px; } }
+      .features-container .feature img {
+        width: 65px;
+        height: 65px;
+        margin-right: 33px; }
+        @media (max-width: 62em) {
+          .features-container .feature img {
+            margin-right: 40px; } }
+      .features-container .feature-text {
+        font-family: "Days", sans-serif;
+        color: #ffffff;
+        margin-bottom: 0; }
+        .features-container .feature-text__yellow {
+          color: #fdfa03;
+          font-family: "Days", sans-serif; }
+
 * {
   margin: 0 auto;
   -webkit-box-sizing: border-box;

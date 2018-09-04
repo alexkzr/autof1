@@ -1,0 +1,51 @@
+.features
+  min-height: 840px
+  background: url('../img-min/scnd-bg.png') no-repeat center
+  background-size: cover
+  .section-heading
+    opacity: 0.97
+    color: #ffffff
+    font-family: $concepto
+    font-size: 40px
+    font-weight: 400
+    line-height: 21.9px
+    text-transform: uppercase
+    letter-spacing: 2px
+    text-align: center
+    padding-top: 150px
+    padding-bottom: 100px
+    @include mq($until: 768px)
+      line-height: 45.9px
+  &-container
+    display: flex
+    flex-wrap: wrap
+    padding-left: 50px
+    padding-right: 50px
+    @include mq($until: 992px)
+      padding-left: 20px
+      padding-right: 20px
+      padding-bottom: 250px
+    .feature
+      display: flex
+      flex-basis: 45%
+      margin-bottom: 35px
+      min-height: 56px
+      @include mq($until: 992px)
+        margin-bottom: 40px
+        flex-basis: 90%
+      @include mq($until: 768px)
+        margin-bottom: 20px
+
+      img
+        width: 65px
+        height: 65px
+        margin-right: 33px
+        @include mq($until: 992px)
+          margin-right: 40px
+      &-text
+        font-family: $days
+        color: #ffffff
+        margin-bottom: 0
+        &__yellow
+          color: $feature-yellow
+          font-family: $days
