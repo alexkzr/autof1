@@ -18,3 +18,20 @@ li
   list-style: none
 a
   text-decoration: none
+
+img
+  max-width: 100%
+
+.row
+  @include mq($until: 576px)
+    margin-left: 0
+    margin-right: 0
+.container
+  @include mq($until: 576px)
+    padding-left: 0
+    padding-right: 0
+@media (min-width: 1300px)
+  .container 
+    max-width: 1364px
+.button
+  cursor: pointer

@@ -1,6 +1,9 @@
 .header
+  position: relative
+  height: 100px
+  background: #ffffff
   .logo
-    height: 100%
+    height: 100px
     display: flex
     padding-left: 0
     align-items: center
@@ -9,17 +12,106 @@
       width: 76px
       height: 47px
   .menu
+    position: absolute
     height: 100px
+    width: 100%
+    right: 15px  
+    @include mq($until: 575px)
+      width: 100vw
+      right: 0
+    @include mq($until: 768px)
+      height: auto
+    .hamburger 
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      align-items: center
+      align-self: flex-end
+      width: 60px
+      height: 100px
+      border-radius: 50%
+      cursor: pointer
+      top: 0px
+      transition: all 1s
+      margin-right: 30px
+    
+    .hamburger span, .hamburger span::before, .hamburger span::after 
+      width: 50px  
+      height: 5px
+    .hamburger span 
+      position: absolute
+      display: block
+      height: 5px
+      top: 50%
+      transform: translateY(-50%)
+      left: 50%
+      transform: translateX(-45%)
+      background: #000
+      transition: .5s
+    /*   box-shadow: 2px 2px 40px rgba(0,0,0,.5) */
+    
+    .hamburger span::before 
+      position: absolute
+      top: -10px
+      content: ''
+      display: block
+      height: 5px
+      background: #000
+      transition: .2s
+    
+    .hamburger span::after 
+      position: absolute
+      top: 10px
+      content: ''
+      display: block
+      height: 5px
+      background: #000
+      transition: .2s
+    .hamburger
+      @include mq($from: 769px)
+        display: none
+
+    
+    .hamburger-active span 
+      transform: rotate(180deg)
+      left: 40%
+    
+    .hamburger-active span::before 
+      transform: rotate(45deg)
+      width: 10px
+      transform-origin: right top
+      top: 0
+      right: 0
+    
+    .hamburger-active span::after 
+      transform: rotate(-45deg)
+      width: 10px
+      transform-origin: right bottom
+      top: 0
+      right: 0
+    
     ul
+      position: relative
       height: 100%
       display: flex
       padding-left: 0
       align-items: center
       justify-content: space-between
+      @include mq($until: 768px)
+        transform: translateX(-165%)
+        transition: 1s
+        flex-direction: column
+        background: rgba(0,0,0,.7)
+        
       li:not(:first-child)
         margin-left: 30px
+        @include mq($until: 992px)
+          margin-left: 15px
       li
         margin-right: 0
+        @include mq($until: 992px)
+          margin-left: 30px
         a
           font-size: 15px
           font-weight: 400
@@ -28,3 +120,14 @@
           letter-spacing: 0.75px
           color: $main-text-color
           text-decoration: none
+          @include mq($until: 992px)
+            font-size: 12px
+          @include mq($until: 768px)
+            font-size: 16px
+            line-height: 3
+            z-index: 33
+            color: #ffffff
+    
+    .active 
+      transform: translateX(0%)
+      transition: all 1s
