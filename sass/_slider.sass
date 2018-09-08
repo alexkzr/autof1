@@ -27,14 +27,20 @@
     .prevArrow
       background: url('../img/arrowLeft.png') no-repeat center
       left: -60px
+      @include mq($until: 768px)
+        left: -30px
     .nextArrow
       background: url('../img/arrowRight.png') no-repeat center
       right: -60px
-    // .slider2, .slider3
-    //   div
-    //     div
-    //       img
-    //         max-width: 797px
-    //         height: 564px
+      @include mq($until: 768px)
+        right: -30px
+    .slick-slide
+      border: 5px solid black
+      border-radius: 50px
+    .slick-active
+      z-index: -1
+    .slick-current
+      z-index: 9
+    
 .hidden
   display: none

@@ -189,7 +189,7 @@
 
 .main {
   position: relative;
-  height: 591px;
+  height: 495px;
   width: 100%;
   background-size: cover;
   display: -webkit-box;
@@ -201,12 +201,18 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  @media (min-width: 48em) and (max-width: 62em) {
+    .main {
+      height: 387px; } }
+  @media (max-width: 48em) {
+    .main {
+      background: url("../img-min/main-bg.png") no-repeat center; } }
   .main #mute {
     background: transparent;
     border: 0px solid transparent;
     outline: none;
     position: absolute;
-    bottom: 15px;
+    bottom: 0;
     right: 20px;
     width: 54px;
     height: 55px;
@@ -220,9 +226,14 @@
   .main video {
     position: absolute;
     width: 100%;
-    height: 135%;
+    height: auto;
     overflow: hidden;
-    z-index: -1; }
+    z-index: -1;
+    -o-object-fit: cover;
+    object-fit: cover; }
+    @media (max-width: 48em) {
+      .main video {
+        display: none; } }
   .main .button-main {
     position: absolute;
     width: 250px;
@@ -404,12 +415,163 @@
   .slider-container .prevArrow {
     background: url("../img/arrowLeft.png") no-repeat center;
     left: -60px; }
+    @media (max-width: 48em) {
+      .slider-container .prevArrow {
+        left: -30px; } }
   .slider-container .nextArrow {
     background: url("../img/arrowRight.png") no-repeat center;
     right: -60px; }
+    @media (max-width: 48em) {
+      .slider-container .nextArrow {
+        right: -30px; } }
+  .slider-container .slick-slide {
+    border: 5px solid black;
+    border-radius: 50px; }
+  .slider-container .slick-active {
+    z-index: -1; }
+  .slider-container .slick-current {
+    z-index: 9; }
 
 .hidden {
   display: none; }
+
+.gallery .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .gallery .logo img {
+    margin-bottom: 25px; }
+
+.gallery-slider {
+  position: relative; }
+  .gallery-slider .prevArrow, .gallery-slider .nextArrow {
+    position: absolute;
+    width: 71px;
+    height: 70px;
+    z-index: 9;
+    top: 50%;
+    -webkit-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+    cursor: pointer; }
+  .gallery-slider .prevArrow {
+    background: url("../img/gallery-arr-left.png") no-repeat center;
+    left: 50px; }
+  .gallery-slider .nextArrow {
+    background: url("../img/gallery-arr-right.png") no-repeat center;
+    right: 50px; }
+  .gallery-slider .slide1, .gallery-slider .slide2 {
+    position: relative;
+    height: 620px; }
+    .gallery-slider .slide1 .slider-top, .gallery-slider .slide1 .slider-bottom, .gallery-slider .slide2 .slider-top, .gallery-slider .slide2 .slider-bottom {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .gallery-slider .slide1 .slider-top, .gallery-slider .slide2 .slider-top {
+      top: 0; }
+    .gallery-slider .slide1 .slider-bottom, .gallery-slider .slide2 .slider-bottom {
+      bottom: 0; }
+    .gallery-slider .slide1 .slide-top-1, .gallery-slider .slide2 .slide-top-1 {
+      background: url("../img-min/gallery2.png") no-repeat center;
+      background-size: cover;
+      width: 897px;
+      height: 310px; }
+    .gallery-slider .slide1 .slide-top-2, .gallery-slider .slide2 .slide-top-2 {
+      background: url("../img-min/gallery3.png") no-repeat center;
+      background-size: cover;
+      width: 897px;
+      height: 310px; }
+    .gallery-slider .slide1 .slide-bottom-1, .gallery-slider .slide2 .slide-bottom-1 {
+      background: url("../img-min/gallery1.png") no-repeat center;
+      background-size: cover;
+      width: 897px;
+      height: 310px; }
+    .gallery-slider .slide1 .slide-bottom-2, .gallery-slider .slide2 .slide-bottom-2 {
+      background: url("../img-min/gallery4.png") no-repeat center;
+      background-size: cover;
+      width: 897px;
+      height: 310px; }
+
+.footer {
+  height: 271px;
+  background: #000000 url("../img-min/footer-bg.png") no-repeat center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .footer .logo {
+    margin-left: 50px; }
+  .footer .social a {
+    color: #ffffff;
+    font-family: "Days", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14.3px;
+    text-transform: uppercase;
+    letter-spacing: 0.96px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 1px; }
+  .footer .social-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 20px; }
+    .footer .social-icons .vk {
+      margin-right: 5px;
+      border-bottom: 0px solid transparent; }
+    .footer .social-icons .inst {
+      margin-left: 0;
+      border-bottom: 0px solid transparent; }
+  .footer .contacts {
+    margin-right: 50px;
+    font-family: "Days", sans-serif; }
+    .footer .contacts .phone {
+      position: relative;
+      margin-bottom: 15px; }
+      .footer .contacts .phone a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Days", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 10.55px; }
+    .footer .contacts .hours, .footer .contacts .address {
+      position: relative;
+      color: #ffffff;
+      font-family: "Days", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 10.55px;
+      margin-bottom: 15px; }
+    .footer .contacts .phone img, .footer .contacts .hours img, .footer .contacts .address img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px; }
+    .footer .contacts .address {
+      margin-bottom: 0; }
+      .footer .contacts .address img {
+        width: 14px;
+        height: 21px; }
 
 * {
   margin: 0 auto;
@@ -437,7 +599,7 @@ img {
 
 @media (min-width: 1300px) {
   .container {
-    max-width: 1364px; } }
+    max-width: 1365px; } }
 
 .button {
   cursor: pointer; }

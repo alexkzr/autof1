@@ -80,24 +80,26 @@ $(document).ready(function () {
   function changeTab(array) {
     for (let i = 0; i < array.length; i++) {
       if (array == formulaArray) {
-        slider2.classList.add('hidden');
-        slider3.classList.add('hidden');
-        slider1.classList.remove('hidden');
+        slider2.style.display = "none";
+        slider3.style.display = "none";
+        slider1.style.display = "block";
+
       } else if (array == businessArray) {
-        slider1.classList.add('hidden');
-        slider3.classList.add('hidden');
-        slider2.classList.remove('hidden');
+        slider1.style.display = "none";
+        slider3.style.display = "none";
+        slider2.style.display = "block";
+
       } else if (array == premiumArray) {
-        slider1.classList.add('hidden');
-        slider2.classList.add('hidden');
-        slider3.classList.remove('hidden');
+        slider1.style.display = "none";
+        slider2.style.display = "none";
+        slider3.style.display = "block";
+
       }
     }
   }
 
   btn1.addEventListener('click', e => {
     e.preventDefault();
-    $(window).trigger('resize');
     btn1.style.border = "5px solid #ff0000;"
     btn2.style.border = "5px solid #000000;"
     btn3.style.border = "5px solid #000000;"
@@ -105,7 +107,7 @@ $(document).ready(function () {
   });
   btn2.addEventListener('click', e => {
     e.preventDefault();
-    $(window).trigger('resize');
+
     btn2.style.border = "5px solid #ff0000;"
     btn1.style.border = "5px solid #000000;"
     btn3.style.border = "5px solid #000000;"
@@ -113,7 +115,7 @@ $(document).ready(function () {
   });
   btn3.addEventListener('click', e => {
     e.preventDefault();
-    $(window).trigger('resize');
+
     btn3.style.border = "5px solid #ff0000;"
     btn2.style.border = "5px solid #000000;"
     btn1.style.border = "5px solid #000000;"
@@ -122,16 +124,34 @@ $(document).ready(function () {
   /*end slider*/
   $('.slider1').slick({
     prevArrow: '<div class="prevArrow"></div>',
-    nextArrow: '<div class="nextArrow"></div>'
+    nextArrow: '<div class="nextArrow"></div>',
+    autoplay: true,
+    slidesToShow: 3,
+    slidestoScroll: 1,
+
+
   });
   $('.slider2').slick({
     prevArrow: '<div class="prevArrow"></div>',
-    nextArrow: '<div class="nextArrow"></div>'
+    nextArrow: '<div class="nextArrow"></div>',
+    autoplay: true,
+    slidesToShow: 3,
+    slidestoScroll: 1,
+
+
   });
   $('.slider3').slick({
     prevArrow: '<div class="prevArrow"></div>',
-    nextArrow: '<div class="nextArrow"></div>'
+    nextArrow: '<div class="nextArrow"></div>',
+    autoplay: true,
+    slidesToShow: 3,
+    slidestoScroll: 1,
+
   });
+  $('.gallery-slider').slick({
+    prevArrow: '<div class="prevArrow"></div>',
+    nextArrow: '<div class="nextArrow"></div>',
+  })
 });
 
 
